@@ -20,7 +20,14 @@
     "editor.minimap.showSlider": "mouseover",
 
     // Code Runner settings
-    "code-runner.runInTerminal": true
+    "code-runner.runInTerminal": true,
+    "python-envs.pythonProjects": [
+        {
+            "path": "classes/week00/second_class/second_class_exercises.py",
+            "envManager": "ms-python.python:venv",
+            "packageManager": "ms-python.python:pip"
+        }
+    ]
 }
 
 

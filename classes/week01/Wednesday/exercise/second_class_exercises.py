@@ -1,15 +1,18 @@
 
 #1 print 'hello' 5 times using an arithmetic operator
-
+print('hello'*5)
 
 
 #2 print 'hello' 5 times using a loop
-
-
-
+cnt = 0 
+while cnt < 5:
+  print('hello')
+  cnt += 1 
 
 #3 print 'hello' 5 times on the same line using a loop
-
+cnt = 0
+while cnt < 5: 
+  print('hello')
 
 
 
@@ -21,6 +24,11 @@
 20 21 22
 
 '''
+for row in range(3): 
+  for col in range(3):
+    print(str(row) +str(col), end= ' ')
+  print( )
+print( )
 
 #5 define txt and input some text from the keyboard into it
 
@@ -64,6 +72,17 @@ result: tttt
              3) shift inside the for loop
              4) print out the printed list outside the for loop
 '''
+
+myList = ['apple', 'orange', 'pear', 'blueberry', 'peach']
+length = len(myList)
+shifted_list = [None] * length
+
+shift = 3
+
+for idx in range(length):
+  new_idx = (idx + 3) % length
+  shifted_list[new_idx] = myList[idx]
+print(shifted_list)
 
 
 
