@@ -5,6 +5,16 @@ from classes.week00.second_class.utils import clear_screen
 Write down the steps a program would need to make a cup of tea. Then implement a Python 
 function make_tea() that prints each step.
 '''
+steps=['step1','step2','step3']
+def make_tea(myList):
+    myList[2] = "step5"
+    for item in myList:
+        print(item)
+    
+
+make_tea(steps)
+print(steps)
+
 # enter your code here
 
 steps = [
@@ -35,6 +45,10 @@ Given a list [2, 4, 6, 8, 10], write a program that prints the next three number
 (the ones after 10)
 '''
 # enter your code here
+nums = [2, 4, 6, 8, 10]
+for i in range(3):
+    next = nums[-1] + 2 + i * 2
+    print(next)
 
 pattern = [2,4,6,8,10]
 for i in range(3):
@@ -67,6 +81,9 @@ clear_screen()
 Write a program that prints your Python version and platform using the sys and platform modules.
 '''
 # enter your code here
+import sys
+import platform
+import pprint
 
 import platform
 import sys
@@ -100,6 +117,11 @@ clear_screen()
 Ask the user to input a sentence. Print it in uppercase, lowercase, with the first letter 
 capitalized, and split it into words.
 '''
+txt = input('please entr some text:')
+print(txt.upper())
+print(txt.lower())
+print(txt.capitalize())
+print(txt.split())
 
 # enter your code here
 
@@ -119,6 +141,9 @@ Calculate the result of the following without parentheses and then with parenthe
 10 + 2 * 5 / 2 - 3 ** 2
 '''
 # enter your code here
+print(10 + 2 * 5 / 2 - 3 ** 2)
+
+x = (10 + (2 * (5 / 2)) - (3 ** 2))
 
 result1 = 10 + 2 * 5 / 2 - 3 ** 2
 result2 = (10 + (2*5))/((2-3)**2)
@@ -126,6 +151,8 @@ result2 = (10 + (2*5))/((2-3)**2)
 print('Without parentheses:', result1)
 print('With parentheses:', result2)
 
+x = 2**3**2
+print(x)
 pause=input('pause')
 clear_screen()
 '''
