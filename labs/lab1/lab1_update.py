@@ -41,10 +41,27 @@ def draw_diamond():
     height = int(input("Enter an odd number for the diamond height: "))
 
     # TODO: Draw the top half of the diamond
+    for i in range(height):
+        print(" " * (height - i -1) + "*" * (2 * i + 1))
 
     # TODO: Draw the bottom half of the diamond
+    for i in range(height - 2, -1, -1):
+        print(" " * (height - i - 1) + "*" * (2 * i + 1))
 
-# Uncomment to test Part 1
+'''
+ask user for odd number: ask for input and turn odd number into an integer
+print top half of diamond using i to represent number of spaces to be printed after each * and then number of stars to print and + 1 to ensure its odd
+print bottom half of diamond using range & inputs (start -2, stop before -1, and step -1 to count backwards) & same method to count stars
+'''
+height = int(input("Enter an odd number for the diamond height: "))
+
+for i in range(height):
+    print(" " * (height - i -1) + "*" * (2 * i + 1))
+
+for i in range(height - 2, -1, -1):
+    print(" " * (height - i - 1) + "*" * (2 * i + 1))
+
+#Uncomment to test Part 1
 # draw_diamond()
 
 
@@ -67,15 +84,47 @@ def text_analysis():
 
     # TODO: Count letters
     letters = 0
+    for char in text: 
+        if char.isalpha():
+            count += 1
+    print('Number of letters:', count)
 
     # TODO: Count words
+    words = text.split()
+    num_words = len(words)
+    print(f"Words: {num_words}")
 
     # TODO: Count sentences
-
+    sentence_count = 0
+    for char in text:
+         if char in ".?!":
+            sentence_count += 1
+    print(f"Sentences: {sentence_count}")
+    
     # TODO: Print the results
     print(f"Letters: {letters}")
-    print(f"Words: {0}")        # replace 0
-    print(f"Sentences: {0}")    # replace 0
+    print(f"Words: {num_words}")        
+    print(f"Sentences: {sentence_count}")   
+
+ 
+text = input("Enter some text: ")
+
+letters = 0
+for char in text: 
+    if char.isalpha():
+        letters += 1
+print(f"Letters: {letters}")
+
+words = text.split()
+num_words = len(words)
+print(f"Words: {num_words}")
+
+sentence_count = 0
+for char in text:
+    if char in ".?!":
+        sentence_count += 1
+print(f"Sentences: {sentence_count}")
+
 
 # Uncomment to test Part 2
 # text_analysis()
