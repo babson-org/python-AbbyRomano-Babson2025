@@ -35,18 +35,7 @@ def draw_diamond():
     and print a symmetric diamond of that height.
     """
     
-    print("you have some work todo!, draw_diamond")
-
-    # TODO: Prompt user for an odd number
-    height = int(input("Enter an odd number for the diamond height: "))
-
-    # TODO: Draw the top half of the diamond
-    for i in range(height):
-        print(" " * (height - i -1) + "*" * (2 * i + 1))
-
-    # TODO: Draw the bottom half of the diamond
-    for i in range(height - 2, -1, -1):
-        print(" " * (height - i - 1) + "*" * (2 * i + 1))
+print("you have some work todo!, draw_diamond")
 
 '''
 ask user for odd number: ask for input and turn odd number into an integer
@@ -79,33 +68,6 @@ def text_analysis():
 
     print("you have some work todo!, text_analysis")
 
-    # TODO: Get user input
-    text = input("Enter some text: ")
-
-    # TODO: Count letters
-    letters = 0
-    for char in text: 
-        if char.isalpha():
-            count += 1
-    print('Number of letters:', count)
-
-    # TODO: Count words
-    words = text.split()
-    num_words = len(words)
-    print(f"Words: {num_words}")
-
-    # TODO: Count sentences
-    sentence_count = 0
-    for char in text:
-         if char in ".?!":
-            sentence_count += 1
-    print(f"Sentences: {sentence_count}")
-    
-    # TODO: Print the results
-    print(f"Letters: {letters}")
-    print(f"Words: {num_words}")        
-    print(f"Sentences: {sentence_count}")   
-
  
 text = input("Enter some text: ")
 
@@ -113,17 +75,21 @@ letters = 0
 for char in text: 
     if char.isalpha():
         letters += 1
-print(f"Letters: {letters}")
 
 words = text.split()
 num_words = len(words)
-print(f"Words: {num_words}")
 
 sentence_count = 0
 for char in text:
     if char in ".?!":
         sentence_count += 1
-print(f"Sentences: {sentence_count}")
+
+print(f"Letters: {letters}")
+print(f"Words: {num_words}")        
+print(f"Sentences: {sentence_count}")   
+
+ 
+
 
 
 # Uncomment to test Part 2
@@ -141,19 +107,34 @@ def caesar_cipher():
 
     print("you have some work todo!, caesar_cypher")
 
-    # TODO: Get user input text
-    text = input("Enter text: ")
+   
+text = input("Enter text: ")
+shift = int(input("Enter shift value (integer): "))
+choice = input("Type 'e' to encrypt or 'd' to decrypt: ").lower()
 
-    # TODO: Get shift value
-    shift = int(input("Enter shift value (integer): "))
+'''
+define function 
+use ord function to turn both upper and lower case letters into numbers to shift values properly 
+define shift so it will only shift the numbers using if else function: if user chooses 'e', if not use -shift to move letters backwards and decrypt
+use ord(char) to convert letter into a numeric value, - start shifts start to 0 to add/subtract the shift input by the user
+modulus of 26 for wrap around to keep within 0-25
+'''
 
-    # TODO: Ask user whether to encrypt or decrypt
-    choice = input("Type 'e' to encrypt or 'd' to decrypt: ").lower()
-
-    # TODO: Implement encryption and decryption logic
+def caesar_cipher(text, shift, choice): 
     result = ""
+    for char in text:
+        if char.isalpha():
+            start = ord('A') if char.isupper() else ord('a')
+            actual_shift = shift if choice == 'e' else -shift
+            result += chr((ord(char) - start + actual_shift) % 26 + start)
+        else:
+            result += char
+    return result 
 
-    # TODO: Print the final result
+if choice not in ['e', 'd']:
+    print('Invalid choice! Choose Again.')
+else:
+    result = caesar_cipher(text,shift,choice)
     print("Result:", result)
 
 # Uncomment to test Part 3
