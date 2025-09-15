@@ -39,16 +39,29 @@ print("you have some work todo!, draw_diamond")
 
 '''
 ask user for odd number: ask for input and turn odd number into an integer
-print top half of diamond using i to represent number of spaces to be printed after each * and then number of stars to print and + 1 to ensure its odd
-print bottom half of diamond using range & inputs (start -2, stop before -1, and step -1 to count backwards) & same method to count stars
+divide height by 2 to find half way point so it knows how many rows to print on top and then on bottom 
+print top half of diamond using range (half+ 1) so it will print rows 0,1,2, and then +1 will print row 3 - define how many spaces to print before and after first and second *, if = 0, first row so will use loop to only print 1 star
+print bottom half of diamond using range half -1,-1,-1 so loop will count backwards from 2,1,0 and use same method for printing very bottom singular * and then spaces before and after * 
 '''
 height = int(input("Enter an odd number for the diamond height: "))
 
-for i in range(height):
-    print(" " * (height - i -1) + "*" * (2 * i + 1))
+half = height // 2
 
-for i in range(height - 2, -1, -1):
-    print(" " * (height - i - 1) + "*" * (2 * i + 1))
+for i in range(half + 1):
+    spaces_before = " " * (half - i)
+    if i == 0:
+        print(spaces_before + "*")
+    else:
+        middle_spaces = " " * (2 * i - 1)
+        print(spaces_before + "*" + middle_spaces + "*")
+
+for i in range(half - 1, -1, -1):
+    spaces_before = " " * (half - i)
+    if i == 0:
+        print(spaces_before + "*")
+    else:
+        middle_spaces = " " * (2 * i - 1)
+        print(spaces_before + "*" + middle_spaces + "*")
 
 #Uncomment to test Part 1
 # draw_diamond()
@@ -57,7 +70,6 @@ for i in range(height - 2, -1, -1):
 # ==============================
 # Part 2: Count Letters, Words, and Sentences
 # ==============================
-def text_analysis():
     """
     Ask the user for a block of text.
     Count and display:
@@ -68,7 +80,16 @@ def text_analysis():
 
     print("you have some work todo!, text_analysis")
 
- 
+'''
+ask user for text using input function 
+set letter count at 0, use for loop to look if charachter is a-z using is.alpha, if so +1 letter count 
+split text block into list using .split function, use len to count # of words on the list 
+set sentence_count to 0, look for characters .!?, if present, +1 to sentence count 
+add check_words at the end to ensure all text input is a-z, if not error will present and user will reinput text 
+'''
+
+def text_analysis():
+
 text = input("Enter some text: ")
 
 letters = 0
@@ -84,6 +105,11 @@ for char in text:
     if char in ".?!":
         sentence_count += 1
 
+check_words = len(text.split())
+if check_words != words:
+    print('fatal error: something went wrong')
+    exit()
+    
 print(f"Letters: {letters}")
 print(f"Words: {num_words}")        
 print(f"Sentences: {sentence_count}")   
@@ -99,19 +125,6 @@ print(f"Sentences: {sentence_count}")
 # ==============================
 # Part 3: Caesar Cipher – Encrypt and Decrypt
 # ==============================
-def caesar_cipher():
-    """
-    Ask the user for text and a shift value.
-    Provide options to encrypt or decrypt the text using a Caesar cipher.
-    """
-
-    print("you have some work todo!, caesar_cypher")
-
-   
-text = input("Enter text: ")
-shift = int(input("Enter shift value (integer): "))
-choice = input("Type 'e' to encrypt or 'd' to decrypt: ").lower()
-
 '''
 define function 
 use ord function to turn both upper and lower case letters into numbers to shift values properly 
@@ -119,6 +132,10 @@ define shift so it will only shift the numbers using if else function: if user c
 use ord(char) to convert letter into a numeric value, - start shifts start to 0 to add/subtract the shift input by the user
 modulus of 26 for wrap around to keep within 0-25
 '''
+
+text = input("Enter text: ")
+shift = int(input("Enter shift value (integer): "))
+choice = input("Type 'e' to encrypt or 'd' to decrypt: ").lower()
 
 def caesar_cipher(text, shift, choice): 
     result = ""
