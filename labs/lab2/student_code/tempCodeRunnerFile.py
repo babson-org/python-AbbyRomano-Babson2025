@@ -15,3 +15,4 @@ sys.path.insert(1, str(default_code))
 
 from play_game import play_game
 play_game()
+

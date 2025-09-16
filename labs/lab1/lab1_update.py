@@ -29,10 +29,10 @@ Instructions: Complete each part below. Save your work and commit + sync in Code
 # ==============================
 # Part 1: Draw a Diamond
 # ==============================
-    """
-    Ask the user for an odd number for the diamond height
-    and print a symmetric diamond of that height.
-    """
+"""
+Ask the user for an odd number for the diamond height
+and print a symmetric diamond of that height.
+"""
     
 print("you have some work todo!, draw_diamond")
 
@@ -70,15 +70,15 @@ draw_diamond()
 # ==============================
 # Part 2: Count Letters, Words, and Sentences
 # ==============================
-    """
-    Ask the user for a block of text.
-    Count and display:
-        - Number of letters (only count a-zA-Z)
-        - Number of words   (use split())
-        - Number of sentences (., ?, !) 
-    """
+"""
+Ask the user for a block of text.
+Count and display:
+    - Number of letters (only count a-zA-Z)
+    - Number of words   (use split())
+    - Number of sentences (., ?, !) 
+"""
 
-    print("you have some work todo!, text_analysis")
+print("you have some work todo!, text_analysis")
 
 '''
 ask user for text using input function 
