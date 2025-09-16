@@ -29,7 +29,6 @@ Instructions: Complete each part below. Save your work and commit + sync in Code
 # ==============================
 # Part 1: Draw a Diamond
 # ==============================
-def draw_diamond():
     """
     Ask the user for an odd number for the diamond height
     and print a symmetric diamond of that height.
@@ -43,25 +42,26 @@ divide height by 2 to find half way point so it knows how many rows to print on 
 print top half of diamond using range (half+ 1) so it will print rows 0,1,2, and then +1 will print row 3 - define how many spaces to print before and after first and second *, if = 0, first row so will use loop to only print 1 star
 print bottom half of diamond using range half -1,-1,-1 so loop will count backwards from 2,1,0 and use same method for printing very bottom singular * and then spaces before and after * 
 '''
-height = int(input("Enter an odd number for the diamond height: "))
-
-half = height // 2
-
-for i in range(half + 1):
-    spaces_before = " " * (half - i)
-    if i == 0:
-        print(spaces_before + "*")
-    else:
-        middle_spaces = " " * (2 * i - 1)
-        print(spaces_before + "*" + middle_spaces + "*")
-
-for i in range(half - 1, -1, -1):
-    spaces_before = " " * (half - i)
-    if i == 0:
-        print(spaces_before + "*")
-    else:
-        middle_spaces = " " * (2 * i - 1)
-        print(spaces_before + "*" + middle_spaces + "*")
+def draw_diamond():
+    height = int(input("Enter an odd number for the diamond height: "))
+    half = height // 2
+    
+    for i in range(half + 1):
+        spaces_before = " " * (half - i)
+        if i == 0:
+            print(spaces_before + "*")
+        else:
+            middle_spaces = " " * (2 * i - 1)
+            print(spaces_before + "*" + middle_spaces + "*")
+            
+    for i in range(half - 1, -1, -1):
+        spaces_before = " " * (half - i)
+        if i == 0:
+            print(spaces_before + "*")
+        else:
+            middle_spaces = " " * (2 * i - 1)
+            print(spaces_before + "*" + middle_spaces + "*")
+draw_diamond()
 
 #Uncomment to test Part 1
 # draw_diamond()
@@ -89,31 +89,31 @@ add check_words at the end to ensure all text input is a-z, if not error will pr
 '''
 
 def text_analysis():
-
-text = input("Enter some text: ")
-
-letters = 0
-for char in text: 
-    if char.isalpha():
-        letters += 1
-
-words = text.split()
-num_words = len(words)
-
-sentence_count = 0
-for char in text:
-    if char in ".?!":
-        sentence_count += 1
-
-check_words = len(text.split())
-if check_words != words:
-    print('fatal error: something went wrong')
-    exit()
+    text = input("Enter some text: ")
+    letters = 0
+    for char in text: 
+        if char.isalpha():
+            letters += 1
     
-print(f"Letters: {letters}")
-print(f"Words: {num_words}")        
-print(f"Sentences: {sentence_count}")   
+    words = text.split()
+    num_words = len(words)
+    
+    sentence_count = 0
+    for char in text:
+        if char in ".?!":
+            sentence_count += 1
+            
+    check_words = len(text.split())
+    if check_words != len(words):
+        print('fatal error: something went wrong')
+        exit()
+    
+    print(f"Letters: {letters}")
+    print(f"Words: {num_words}")        
+    print(f"Sentences: {sentence_count}")  
 
+text_analysis()
+ 
  
 
 
@@ -154,8 +154,9 @@ else:
     result = caesar_cipher(text,shift,choice)
     print("Result:", result)
 
-# Uncomment to test Part 3
-# caesar_cipher()
+caesar_cipher(text, shift, choice)
+
+
 
 
 

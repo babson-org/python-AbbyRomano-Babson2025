@@ -1,20 +1,16 @@
-text = input("Enter text: ")
-shift = int(input("Enter shift value (integer): "))
-choice = input("Type 'e' to encrypt or 'd' to decrypt: ").lower()
-
-def caesar_cipher(text, shift, choice): 
-    result = ""
-    for char in text:
-        if char.isalpha():
-            start = ord('A') if char.isupper() else ord('a')
-            actual_shift = shift if choice == 'e' else -shift
-            result += chr((ord(char) - start + actual_shift) % 26 + start)
+def main():
+    while True:
+        print("Lab 1 - Python Basics")
+        print("1. Draw Diamond")
+        print("2. Text Analysis")
+        print("3. Caesar Cipher")
+        choice = input("Select part to run (1-3): ")
+        
+        if choice == "1":
+            draw_diamond()
+        elif choice == "2":
+            text_analysis()
+        elif choice == "3":
+            caesar_cipher()
         else:
-            result += char
-    return result 
-
-if choice not in ['e', 'd']:
-    print('Invalid choice! Choose Again.')
-else:
-    result = caesar_cipher(text,shift,choice)
-    print("Result:", result)
+            exit()
