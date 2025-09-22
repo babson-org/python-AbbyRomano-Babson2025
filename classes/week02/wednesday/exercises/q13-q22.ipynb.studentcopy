@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "markdown",
-   "id": "0",
+   "id": "07e8d9b3",
    "metadata": {},
    "source": [
     "# Question 13 - Conditional Logic\n",
@@ -12,19 +12,37 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "1",
+   "id": "b955e21f",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "positive\n"
+     ]
+    }
+   ],
    "source": [
     "# Enter your code here\n",
     "\n",
+<<<<<<< HEAD:classes/week02/wednesday/exercises/q13-22.ipynb
+    "txt = 'please enter a number'\n",
+    "while True: \n",
+    "    try: \n",
+    "        num = int(input(txt))\n",
+    "        break\n",
+    "    except ValueError:\n",
+    "        txt = 'a number for my kingdom'"
+=======
     "\n",
     "\n"
+>>>>>>> 15b809ee95d1cf5728b89196a6ad7bef82f80458:classes/week02/wednesday/exercises/q13-q22.ipynb
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "2",
+   "id": "d5a9cf97",
    "metadata": {},
    "source": [
     "# Question 14 - Even/Odd Check\n",
@@ -34,17 +52,34 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "3",
+   "id": "50b1c63f",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "odd\n"
+     ]
+    }
+   ],
    "source": [
     "# Enter your code here\n",
-    "\n"
+    "txt = 'please enter a number'\n",
+    "while True: \n",
+    "    try: \n",
+    "        num = int(input(txt))\n",
+    "        break\n",
+    "    except ValueError:\n",
+    "        txt = 'a number for my kingdom'\n",
+    "        \n",
+    "if num 2 % == 0: print('even')\n",
+    "else: print('odd')"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "4",
+   "id": "d75d6d70",
    "metadata": {},
    "source": [
     "# Question 15 - Boolean Operators\n",
@@ -54,17 +89,36 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "5",
+   "id": "a06dbda5",
    "metadata": {},
    "outputs": [],
    "source": [
     "# Enter your code here\n",
-    "\n"
+    "\n",
+    "txt = 'please enter a number'\n",
+    "while True: \n",
+    "    try: \n",
+    "        num1 = int(input(txt))\n",
+    "        break\n",
+    "    except ValueError:\n",
+    "        txt = 'a number for my kingdom'\n",
+    "\n",
+    "txt = 'please enter a number'\n",
+    "while True: \n",
+    "    try: \n",
+    "        num2 = int(input(txt))\n",
+    "        break\n",
+    "    except ValueError:\n",
+    "        txt = 'a number for my kingdom'\n",
+    "\n",
+    "if num1 > 0 and num2 > 0: print('both are positive')\n",
+    "elif num1 > 0 or num2 > 0: print('only one number is positive')\n",
+    "else: print('both are negative')"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "6",
+   "id": "b145d68c",
    "metadata": {},
    "source": [
     "# Question 16 - For Loop\n",
@@ -74,18 +128,23 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "7",
+   "id": "8859f8b8",
    "metadata": {},
    "outputs": [],
    "source": [
     "# Enter your code here\n",
+<<<<<<< HEAD:classes/week02/wednesday/exercises/q13-22.ipynb
+    "for idx in range(1,21):\n",
+    "    for idx % 3 != 0: print(idx)\n",
+=======
     "\n",
+>>>>>>> 15b809ee95d1cf5728b89196a6ad7bef82f80458:classes/week02/wednesday/exercises/q13-q22.ipynb
     "\n"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "8",
+   "id": "04f41cb4",
    "metadata": {},
    "source": [
     "# Question 17 - While Loop\n",
@@ -95,17 +154,30 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "9",
+   "id": "2be510dc",
    "metadata": {},
    "outputs": [],
    "source": [
     "# Enter your code here\n",
+    "\n",
+    "secret = 3\n",
+    "    txt ='please enter a number (1-10)'\n",
+    "    while True:\n",
+    "        try:\n",
+    "            num = int(input(txt))\n",
+    "            if num < 1 or num > 10: raise Exception\n",
+    "            break\n",
+    "        except ValueError:\n",
+    "            txt='a number'\n",
+    "        except Exception:\n",
+    "            txt='between 1 and 10'\n",
+    "\n",
     "\n"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "10",
+   "id": "4bdfcb3e",
    "metadata": {},
    "source": [
     "# Question 18 - Break / Continue\n",
@@ -115,7 +187,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "11",
+   "id": "b1beecee",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -125,7 +197,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "12",
+   "id": "55d6425e",
    "metadata": {},
    "source": [
     "# Question 19 - Function Definition\n",
@@ -135,16 +207,24 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "13",
+   "id": "ae5e7912",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "625\n"
+     ]
+    }
+   ],
    "source": [
     "# Enter your code here\n"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "14",
+   "id": "5a1e7acb",
    "metadata": {},
    "source": [
     "# Question 20 - Function with Mutable Argument\n",
@@ -154,7 +234,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "15",
+   "id": "328b87f2",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -163,7 +243,7 @@
   },
   {
    "cell_type": "markdown",
-   "id": "16",
+   "id": "9b4a48c3",
    "metadata": {},
    "source": [
     "# Question 21 - Comments / Documentation\n",
@@ -173,16 +253,24 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "17",
+   "id": "8617f09d",
    "metadata": {},
-   "outputs": [],
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Hello, Bob!\n"
+     ]
+    }
+   ],
    "source": [
     "# Enter your code here\n"
    ]
   },
   {
    "cell_type": "markdown",
-   "id": "18",
+   "id": "017b83d4",
    "metadata": {},
    "source": [
     "# Question 22 - Combining Tools\n",
@@ -192,7 +280,7 @@
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "19",
+   "id": "26939624",
    "metadata": {},
    "outputs": [],
    "source": [
@@ -203,7 +291,11 @@
  ],
  "metadata": {
   "kernelspec": {
+<<<<<<< HEAD:classes/week02/wednesday/exercises/q13-22.ipynb
+   "display_name": "venv (3.10.18)",
+=======
    "display_name": "venv",
+>>>>>>> 15b809ee95d1cf5728b89196a6ad7bef82f80458:classes/week02/wednesday/exercises/q13-q22.ipynb
    "language": "python",
    "name": "python3"
   },
