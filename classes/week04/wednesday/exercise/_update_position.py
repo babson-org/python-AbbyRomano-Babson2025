@@ -76,3 +76,94 @@ This way:
 
 
 '''
+def main():
+    clients = load_clients()   
+    
+    while True:
+        s0_menu_items = ('Select client', 'Create client')
+        choice = display_menu(s0_menu_items)
+
+        if choice == None:
+            print('exit system s0')
+            exit()
+        
+        elif choice == 1:            
+            while True:
+                choice = select_client(clients)                
+                if choice == None:
+                    print('return to previous menu s00 -> s0')
+                    break
+                else:
+                    active_client = choice
+                    while True:
+                        s1_menu_items =('Transactions', 'View Portfolio', 'View Transactions')
+                        choice = display_menu(s1_menu_items)
+                        if choice == None:
+                            print('return to previous menu s1 -> s00')
+                            break
+                        elif choice == 1:
+                            while True:
+                                s10_menu_items =('Buy', 'Sell', 'Contribution', 'Withdrawal')
+                                choice = display_menu(s10_menu_items)
+                                if choice == None:
+                                    print('return to previous menu s10 -> s1')
+                                    break
+                                elif choice == 1:
+                                    '''
+                                    get buy input, wait for return to break out of loop
+                                    '''   
+                                    buy_input(active_client) 
+                                    break                                
+                                elif choice == 2:
+                                    '''
+                                    get sell input, wait for return to break out of loop
+                                    '''
+                                    sell_input(active_client) 
+                                    break     
+                                elif choice == 3:
+                                    '''
+                                    get contribution input, wait for return to break out of loop
+                                    '''
+                                    contribution_input(active_client) 
+                                    break     
+                                elif choice == 4:
+                                    '''
+                                    get withdrawal input, wait for return to break out of loop
+                                    '''
+                                    withdrawal_input(active_client) 
+                                    break     
+                                else:
+                                    print('FATAL ERROR: we should never get here s10 bad input')
+
+                            
+                        elif choice == 2:
+                            '''
+                            view portfolio
+                            wait for None return to break out of loop
+                            '''
+                            view_portfolio(active_client)
+                            break
+                        elif choice == 3:
+                            '''
+                            view transactions
+                            wait for None return  to break out of loop
+                            '''
+                            view_transactions()
+                            break
+                        else:
+                            print("FATAL ERROR: should never get here s1 bad input")
+
+                        
+                        
+
+        elif choice == 2:
+            while True: 
+                new_client = input_client(clients)
+                if new_client is None: 
+                    print('Return to previous menu s01 -> s0')
+                    break
+                else:
+                    print(f'Client {new_client['fname']} {new_client['name']} created. s01 -> s0')
+        else:
+            print('FATAL ERROR: should never get here s0 bad input')     
+                
