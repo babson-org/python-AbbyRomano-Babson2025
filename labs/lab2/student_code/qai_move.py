@@ -1,3 +1,4 @@
+#AI to select first available cell 
 #returns python index 0-8 -> prints 1 for board number 2 
 def ai_move(board: list[int]):
     for i in range(len(board)):
@@ -14,7 +15,8 @@ def ai_move_b(board: list[int]):
             return i + 1
     pass
 board = [10, 2,3, 4, -10, 6, 7, 8, 9]
-print(ai_move_b(board))
+print(ai_move_b(board)) 
+
 
 
 """
