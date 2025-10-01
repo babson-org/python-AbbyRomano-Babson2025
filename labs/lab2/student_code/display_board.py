@@ -22,7 +22,8 @@ def print_board(board: list[int]) -> None:
         if row < 2:
             print('-----------')
     print()
-    
+
+'''
 from utils import clear_screen
 def print_board(board: list[int]):
     """
@@ -36,15 +37,9 @@ def print_board(board: list[int]):
         ---------
         7 | 8 | X
     """
-    
-    def cell(value: int) -> str:
-        # TODO: Return 'X' if value == 10
-        # TODO: Return 'O' if value == -10
-        # TODO: Otherwise, return str(value)  -> if not 10 or -10 return idx 1-9 as a string
-        pass
         
     clear_screen()
-    # TODO: Loop through rows
+'''
     # TODO: For each row, print formatted board row using cell()
     # HINT: For each row create a list of what should be printed
     #       row_values = [ 'X', '2', '3' ] call cell() each time to get each value
@@ -61,4 +56,4 @@ def print_board(board: list[int]):
     #                  |   |   
     #                7 | 8 | X 
     #                  |   |   
-    pass
+    

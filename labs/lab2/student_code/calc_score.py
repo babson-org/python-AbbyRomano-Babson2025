@@ -33,6 +33,8 @@ def calc_score(board: list[int]):
     #if no winner, return 0   
     return 0  
 
+
+
   
 
 """
