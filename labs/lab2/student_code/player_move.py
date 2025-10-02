@@ -21,9 +21,10 @@ def player_move(board: list[int], score: dict[str, int]):
                 continue
             board[idx] = score['player']
             break
+
         except ValueError:
-            prompt = "Invalid input. Try again (1-9): "
-            
+            print("Invalid input. Try again (1-9): ")
+    pass 
     # TODO: Assign score['player'] to the selected cell on the board
     # HINT: remember the board moves are 1 - 9 but the board indices are
     # 0 - 8
