@@ -4,8 +4,7 @@ def ai_move(board:list[int]):
     for idx in range(9):
         if abs(board[idx]) != 10: return idx 
 
-board = [10, 2, 3, 4, -10, 6, 7, 8, 9] 
-print(ai_move(board))
+
 
 
 """

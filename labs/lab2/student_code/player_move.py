@@ -8,6 +8,7 @@ def player_move(board: list[int], score: dict[str, int]):
     """
     
     prompt = "Select an empty cell (1-9): "
+    #use a while loop to validate that each move is either open or within the index
     while True:
         try:
             # TODO: Convert input to integer, & create index so its easier to validate if move is not taken
@@ -19,13 +20,14 @@ def player_move(board: list[int], score: dict[str, int]):
             if board[idx] in [10, -10]:
                 print('cell taken try again!')
                 continue
+            # TODO: Assign score['player'] to the selected cell on the board
             board[idx] = score['player']
             break
 
         except ValueError:
             print("Invalid input. Try again (1-9): ")
     pass 
-    # TODO: Assign score['player'] to the selected cell on the board
+ 
     # HINT: remember the board moves are 1 - 9 but the board indices are
     # 0 - 8
 
