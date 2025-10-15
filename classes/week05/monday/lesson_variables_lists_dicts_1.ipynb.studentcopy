@@ -1,0 +1,652 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "0",
+   "metadata": {},
+   "source": [
+    "# 📘 Variables, Lists, and Dictionaries\n",
+    "\n",
+    "### Objective\n",
+    "Scalars and data structures in Python. Each code cell demonstrates one concept or print statement for clarity."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1",
+   "metadata": {},
+   "source": [
+    "## 1. Introduction: Variables"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2",
+   "metadata": {},
+   "source": [
+    "Variables are containers that hold data. Every variable has a data type.\n",
+    "\n",
+    "- If a variable holds a single value → **scalar** (or primitive).\n",
+    "- If it holds multiple values → **data structure**."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "3",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "print_flag = False"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4",
+   "metadata": {},
+   "source": [
+    "**Guiding Question:**\n",
+    "\n",
+    "👉 What type of variable is this?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5",
+   "metadata": {},
+   "source": [
+    "## 2. Scalars / Primitive Variables"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "6",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "fname = 'Peggy'           # string\n",
+    "lname = 'Lipton'          # string\n",
+    "dob   = '2006-08-30'      # string\n",
+    "year  = 'Senior'          # string\n",
+    "attendance_rate = 0.92    # float\n",
+    "credits = 122"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7",
+   "metadata": {},
+   "source": [
+    "**Guiding Question:**\n",
+    "\n",
+    "👉 How many different types of variables do we have here?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8",
+   "metadata": {},
+   "source": [
+    "## 3. Motivation for Data Structures"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9",
+   "metadata": {},
+   "source": [
+    "The data is expressed as separate items but all the items relate to the same entity. It makes more sense to keep this data in a data structure."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "10",
+   "metadata": {},
+   "source": [
+    "**Guiding Question:**\n",
+    "\n",
+    "👉 What kind of data structure could we use to represent this student? Why?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "11",
+   "metadata": {},
+   "source": [
+    "## 4. Lists"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "12",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "student = [fname, lname, dob, year, attendance_rate, credits]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "13",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Senior\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(student[3])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "14",
+   "metadata": {},
+   "source": [
+    "**Guiding Question:**\n",
+    "\n",
+    "👉 What does the programmer have to know in order to use this student list correctly?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "15",
+   "metadata": {},
+   "source": [
+    "## 5. Dictionaries"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "16",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "student = {\n",
+    "    'fname': 'Peggy',\n",
+    "    'lname': 'Lipton',\n",
+    "    'dob': '2006-08-30',\n",
+    "    'year': 'Senior',\n",
+    "    'attendance_rate': 0.92,\n",
+    "    'credits': 122\n",
+    "}"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "17",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Senior\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(student['year'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "18",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "fname\n",
+      "lname\n",
+      "dob\n",
+      "year\n",
+      "attendance_rate\n",
+      "credits\n"
+     ]
+    }
+   ],
+   "source": [
+    "for key in student:\n",
+    "    print(key)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "19",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "fname\n",
+      "lname\n",
+      "dob\n",
+      "year\n",
+      "attendance_rate\n",
+      "credits\n"
+     ]
+    }
+   ],
+   "source": [
+    "for key in student.keys():\n",
+    "    print(key)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "20",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Peggy\n",
+      "Lipton\n",
+      "2006-08-30\n",
+      "Senior\n",
+      "0.92\n",
+      "122\n"
+     ]
+    }
+   ],
+   "source": [
+    "for value in student.values():\n",
+    "    print(value)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "21",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "fname = Peggy\n",
+      "lname = Lipton\n",
+      "dob = 2006-08-30\n",
+      "year = Senior\n",
+      "attendance_rate = 0.92\n",
+      "credits = 122\n"
+     ]
+    }
+   ],
+   "source": [
+    "for key, value in student.items():\n",
+    "    print(f\"{key} = {value}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "22",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "None\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(student.get('gpa'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "23",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "NEEDS TO STUDY\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(student.get('gpa', 'NEEDS TO STUDY'))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "24",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'fname': 'Peggy', 'lname': 'Lipton', 'dob': '2006-08-30', 'year': 'Senior', 'attendance_rate': 0.92, 'credits': 122, 'gpa': 0.0}\n"
+     ]
+    }
+   ],
+   "source": [
+    "student.setdefault('gpa', 0.0)\n",
+    "print(student)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "25",
+   "metadata": {},
+   "source": [
+    "## 6a. List of Lists"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "26",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "board = [\n",
+    "    [1,2,3],\n",
+    "    [4,5,6],\n",
+    "    [7,8,9]\n",
+    "]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "27",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[1, 2, 3]\n",
+      "[4, 5, 6]\n",
+      "[7, 8, 9]\n"
+     ]
+    }
+   ],
+   "source": [
+    "for row in board:\n",
+    "    print(row)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "28",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1 2 3 \n",
+      "4 5 6 \n",
+      "7 8 9 \n"
+     ]
+    }
+   ],
+   "source": [
+    "for row in range(3):\n",
+    "    for col in range(3):\n",
+    "        print(str(board[row][col]) + ' ', end='')\n",
+    "    print()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "29",
+   "metadata": {},
+   "source": [
+    "**Guiding Question:**\n",
+    "\n",
+    "👉 Why did we need `str()` here?"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "30",
+   "metadata": {},
+   "source": [
+    "## 6b. List of Dictionaries"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "31",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[{'attendance_rate': 0.92,\n",
+      "  'credits': 122,\n",
+      "  'dob': '2006-08-30',\n",
+      "  'fname': 'Peggy',\n",
+      "  'gpa': 0.0,\n",
+      "  'lname': 'Lipton',\n",
+      "  'year': 'Senior'}]\n"
+     ]
+    }
+   ],
+   "source": [
+    "students = []\n",
+    "students.append(student)\n",
+    "from pprint import pprint\n",
+    "pprint(students)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "32",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Topology\n"
+     ]
+    }
+   ],
+   "source": [
+    "courses = ['Biology','Physics','Topology','20th Century Poets']\n",
+    "student['courses'] = courses\n",
+    "print(students[0]['courses'][2])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "33",
+   "metadata": {},
+   "source": [
+    "## 📝 Practice Problems "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "34",
+   "metadata": {},
+   "source": [
+    "**1. Create a dictionary `attendance` with three students as keys and the number of classes they attended as values. Print the student with the highest attendance.**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "35",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "KeyboardInterrupt",
+     "evalue": "",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mKeyboardInterrupt\u001b[0m                         Traceback (most recent call last)",
+      "Cell \u001b[0;32mIn[20], line 1\u001b[0m\n\u001b[0;32m----> 1\u001b[0m attendance \u001b[38;5;241m=\u001b[39m {\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mAlice\u001b[39m\u001b[38;5;124m'\u001b[39m: \u001b[38;5;241m18\u001b[39m, \u001b[38;5;124m'\u001b[39m\u001b[38;5;124mBob\u001b[39m\u001b[38;5;124m'\u001b[39m: \u001b[38;5;241m20\u001b[39m, \u001b[38;5;124m'\u001b[39m\u001b[38;5;124mCarol\u001b[39m\u001b[38;5;124m'\u001b[39m: \u001b[38;5;241m15\u001b[39m}\n\u001b[1;32m      2\u001b[0m student[\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mattendance\u001b[39m\u001b[38;5;124m'\u001b[39m] \u001b[38;5;241m=\u001b[39m attendance\n\u001b[1;32m      3\u001b[0m \u001b[38;5;28mprint\u001b[39m(students[\u001b[38;5;241m0\u001b[39m][\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mattendance\u001b[39m\u001b[38;5;124m'\u001b[39m][\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mBob\u001b[39m\u001b[38;5;124m'\u001b[39m]) \n",
+      "Cell \u001b[0;32mIn[20], line 1\u001b[0m\n\u001b[0;32m----> 1\u001b[0m attendance \u001b[38;5;241m=\u001b[39m {\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mAlice\u001b[39m\u001b[38;5;124m'\u001b[39m: \u001b[38;5;241m18\u001b[39m, \u001b[38;5;124m'\u001b[39m\u001b[38;5;124mBob\u001b[39m\u001b[38;5;124m'\u001b[39m: \u001b[38;5;241m20\u001b[39m, \u001b[38;5;124m'\u001b[39m\u001b[38;5;124mCarol\u001b[39m\u001b[38;5;124m'\u001b[39m: \u001b[38;5;241m15\u001b[39m}\n\u001b[1;32m      2\u001b[0m student[\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mattendance\u001b[39m\u001b[38;5;124m'\u001b[39m] \u001b[38;5;241m=\u001b[39m attendance\n\u001b[1;32m      3\u001b[0m \u001b[38;5;28mprint\u001b[39m(students[\u001b[38;5;241m0\u001b[39m][\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mattendance\u001b[39m\u001b[38;5;124m'\u001b[39m][\u001b[38;5;124m'\u001b[39m\u001b[38;5;124mBob\u001b[39m\u001b[38;5;124m'\u001b[39m]) \n",
+      "File \u001b[0;32m_pydevd_bundle\\\\pydevd_cython.pyx:1697\u001b[0m, in \u001b[0;36m_pydevd_bundle.pydevd_cython.SafeCallWrapper.__call__\u001b[0;34m()\u001b[0m\n",
+      "File \u001b[0;32m_pydevd_bundle\\\\pydevd_cython.pyx:634\u001b[0m, in \u001b[0;36m_pydevd_bundle.pydevd_cython.PyDBFrame.trace_dispatch\u001b[0;34m()\u001b[0m\n",
+      "File \u001b[0;32m_pydevd_bundle\\\\pydevd_cython.pyx:1112\u001b[0m, in \u001b[0;36m_pydevd_bundle.pydevd_cython.PyDBFrame.trace_dispatch\u001b[0;34m()\u001b[0m\n",
+      "File \u001b[0;32m_pydevd_bundle\\\\pydevd_cython.pyx:1090\u001b[0m, in \u001b[0;36m_pydevd_bundle.pydevd_cython.PyDBFrame.trace_dispatch\u001b[0;34m()\u001b[0m\n",
+      "File \u001b[0;32m_pydevd_bundle\\\\pydevd_cython.pyx:494\u001b[0m, in \u001b[0;36m_pydevd_bundle.pydevd_cython.PyDBFrame.do_wait_suspend\u001b[0;34m()\u001b[0m\n",
+      "File \u001b[0;32m/workspaces/python-AbbyRomano-Babson2025/venv/lib/python3.10/site-packages/debugpy/_vendored/pydevd/pydevd.py:2188\u001b[0m, in \u001b[0;36mPyDB.do_wait_suspend\u001b[0;34m(self, thread, frame, event, arg, exception_type)\u001b[0m\n\u001b[1;32m   2185\u001b[0m             from_this_thread\u001b[38;5;241m.\u001b[39mappend(frame_custom_thread_id)\n\u001b[1;32m   2187\u001b[0m     \u001b[38;5;28;01mwith\u001b[39;00m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_threads_suspended_single_notification\u001b[38;5;241m.\u001b[39mnotify_thread_suspended(thread_id, thread, stop_reason):\n\u001b[0;32m-> 2188\u001b[0m         keep_suspended \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43m_do_wait_suspend\u001b[49m\u001b[43m(\u001b[49m\u001b[43mthread\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mframe\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mevent\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43marg\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mtrace_suspend_type\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mfrom_this_thread\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mframes_tracker\u001b[49m\u001b[43m)\u001b[49m\n\u001b[1;32m   2190\u001b[0m frames_list \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;01mNone\u001b[39;00m\n\u001b[1;32m   2192\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m keep_suspended:\n\u001b[1;32m   2193\u001b[0m     \u001b[38;5;66;03m# This means that we should pause again after a set next statement.\u001b[39;00m\n",
+      "File \u001b[0;32m/workspaces/python-AbbyRomano-Babson2025/venv/lib/python3.10/site-packages/debugpy/_vendored/pydevd/pydevd.py:2257\u001b[0m, in \u001b[0;36mPyDB._do_wait_suspend\u001b[0;34m(self, thread, frame, event, arg, trace_suspend_type, from_this_thread, frames_tracker)\u001b[0m\n\u001b[1;32m   2254\u001b[0m                 queue\u001b[38;5;241m.\u001b[39mput(internal_cmd)\n\u001b[1;32m   2255\u001b[0m                 wait_timeout \u001b[38;5;241m=\u001b[39m TIMEOUT_FAST\n\u001b[0;32m-> 2257\u001b[0m         \u001b[43mnotify_event\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mwait\u001b[49m\u001b[43m(\u001b[49m\u001b[43mwait_timeout\u001b[49m\u001b[43m)\u001b[49m\n\u001b[1;32m   2258\u001b[0m         notify_event\u001b[38;5;241m.\u001b[39mclear()\n\u001b[1;32m   2260\u001b[0m \u001b[38;5;28;01mfinally\u001b[39;00m:\n",
+      "File \u001b[0;32m/usr/local/lib/python3.10/threading.py:607\u001b[0m, in \u001b[0;36mEvent.wait\u001b[0;34m(self, timeout)\u001b[0m\n\u001b[1;32m    605\u001b[0m signaled \u001b[38;5;241m=\u001b[39m \u001b[38;5;28mself\u001b[39m\u001b[38;5;241m.\u001b[39m_flag\n\u001b[1;32m    606\u001b[0m \u001b[38;5;28;01mif\u001b[39;00m \u001b[38;5;129;01mnot\u001b[39;00m signaled:\n\u001b[0;32m--> 607\u001b[0m     signaled \u001b[38;5;241m=\u001b[39m \u001b[38;5;28;43mself\u001b[39;49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43m_cond\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mwait\u001b[49m\u001b[43m(\u001b[49m\u001b[43mtimeout\u001b[49m\u001b[43m)\u001b[49m\n\u001b[1;32m    608\u001b[0m \u001b[38;5;28;01mreturn\u001b[39;00m signaled\n",
+      "File \u001b[0;32m/usr/local/lib/python3.10/threading.py:324\u001b[0m, in \u001b[0;36mCondition.wait\u001b[0;34m(self, timeout)\u001b[0m\n\u001b[1;32m    322\u001b[0m \u001b[38;5;28;01melse\u001b[39;00m:\n\u001b[1;32m    323\u001b[0m     \u001b[38;5;28;01mif\u001b[39;00m timeout \u001b[38;5;241m>\u001b[39m \u001b[38;5;241m0\u001b[39m:\n\u001b[0;32m--> 324\u001b[0m         gotit \u001b[38;5;241m=\u001b[39m \u001b[43mwaiter\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43macquire\u001b[49m\u001b[43m(\u001b[49m\u001b[38;5;28;43;01mTrue\u001b[39;49;00m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mtimeout\u001b[49m\u001b[43m)\u001b[49m\n\u001b[1;32m    325\u001b[0m     \u001b[38;5;28;01melse\u001b[39;00m:\n\u001b[1;32m    326\u001b[0m         gotit \u001b[38;5;241m=\u001b[39m waiter\u001b[38;5;241m.\u001b[39macquire(\u001b[38;5;28;01mFalse\u001b[39;00m)\n",
+      "\u001b[0;31mKeyboardInterrupt\u001b[0m: "
+     ]
+    }
+   ],
+   "source": [
+    "attendance = {'Alice': 18, 'Bob': 20, 'Carol': 15}\n",
+    "max_days = 0 \n",
+    "name = none\n",
+    "for key in attendance: \n",
+    "    if attendance[key] > max_days: \n",
+    "        name = key\n",
+    "        max_days = attendance[key]\n",
+    "print(name)\n",
+    "      "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "36",
+   "metadata": {},
+   "source": [
+    "**2. Represent a deck of four playing cards using a list of dictionaries, where each dict has `'rank'` and `'suit'`. Print the suit of the third card.**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "37",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Hearts\n"
+     ]
+    }
+   ],
+   "source": [
+    "cards = [{'rank': '1', 'suit': 'Spades'}, {'rank': '5', 'suit': 'Clubs'}, {'rank': '3', 'suit': 'Hearts'}]\n",
+    "print(cards[2]['suit'])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "38",
+   "metadata": {},
+   "source": [
+    "**3. Create a 3×3 tic-tac-toe board as a list of lists. Write code to mark the center square with `'X'`.**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "39",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "40",
+   "metadata": {},
+   "source": [
+    "**4. Suppose you have a dictionary of courses with course names as keys and credit hours as values. Write code to compute the total credit hours.**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "41",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "42",
+   "metadata": {},
+   "source": [
+    "**5. Given a list of tuples like `[('Alice', 3.5), ('Bob', 2.8)]`, convert it into a dictionary mapping student names to GPAs.**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "43",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "id": "44",
+   "metadata": {},
+   "source": [
+    "**6. Extend the `student` dictionary to include a key `'clubs'` that stores a list of extracurricular activities. Add two clubs and print the updated dict.**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "45",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "venv (3.10.18)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.18"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
