@@ -14,5 +14,5 @@ def play_minesweep():
     mines = place_random_mines(mine_board)
 
     is_mine_at(hidden_board, mine_board, mines)
-
+    
 play_minesweep()
