@@ -1,4 +1,7 @@
-def print_board(board): 
+def print_board(board):
+    """Print the board row by row in a simple grid format."""
+    print("\nCurrent Board:")
     for row in board:
-        print(' '.join(row))
-
+        for cell in row:
+            print(cell, end=' ')
+        print()
