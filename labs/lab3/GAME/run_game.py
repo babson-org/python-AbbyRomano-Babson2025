@@ -55,11 +55,28 @@ class GamePycFinder(importlib.abc.MetaPathFinder):
         if "." in fullname:
             return []
         base = os.path.join(self.base, "__pycache__")
-        return [
+        # Prefer exact tag matches (cpython-XY) but also accept any .pyc
+        # that starts with the module name. This makes the runner robust
+        # when .pyc files were compiled with a different Python minor
+        # version (e.g. cpython-310 vs cpython-311).
+        candidates = [
             os.path.join(base, f"{fullname}.{self.tag}.pyc"),
             os.path.join(base, f"{fullname}.opt-1.{self.tag}.pyc"),
             os.path.join(base, f"{fullname}.opt-2.{self.tag}.pyc"),
         ]
+        # Fallback: include any matching .pyc files in __pycache__ for the
+        # module name regardless of the tag.
+        try:
+            for fname in os.listdir(base):
+                if fname.startswith(fullname + ".") and fname.endswith(".pyc"):
+                    path = os.path.join(base, fname)
+                    if path not in candidates:
+                        candidates.append(path)
+        except FileNotFoundError:
+            # Let the normal logic handle missing directory elsewhere.
+            pass
+
+        return candidates
 
     def find_spec(self, fullname, path=None, target=None):
         for cand in self._candidate_paths(fullname):
