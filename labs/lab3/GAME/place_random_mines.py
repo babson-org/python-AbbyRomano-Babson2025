@@ -1,17 +1,16 @@
 import random 
-size = int(input('Enter board size: '))
+from globals import MINE_SYMBOL 
 
-board = [['⬧' for _ in range(size)] for _ in range(size)]
-for i in range(size):
-    print('⬧ ' * size)
+def place_random_mines(board):
+    size = len(board)
+    num_mines = int(input('Enter how many mines to place: '))
 
-num_mines = int(input('Enter a number: '))
-for _ in range(num_mines):
-    row = random.randint(0, size - 1)
-    col = random.randint(0, size - 1)
-    board[row][col] = '💣'
-
-# Print the board again with mines
-print('\nBoard with mines:')
-for row in board:
-    print(*row)
+    mines = []
+    while len(mines) < num_mines:
+        row = random.randint(0, size - 1)
+        col = random.randint(0, size - 1)
+        if (row, col) not in mines: 
+            mines.append(row, col)
+            board[row][col] = MINE_SYMBOL
+    print(f'{num_mines} mines have been placed, begin playing!')
+    return mines 
