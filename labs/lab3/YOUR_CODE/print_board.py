@@ -2,7 +2,7 @@ import globals
 
 
 def print_board(board: list, level: int):
-    '''
+
     board = [
         [(' ♦', '💣'), (' ♦', '💣'), (' ♦', 1),
          (' ♦', '   '), (' ♦', '   '), (' ♦', '   ')],
@@ -11,9 +11,8 @@ def print_board(board: list, level: int):
         [(' ♦', '   '), (' ♦', '   '), (' ♦', '   '),
          (' ♦', '   '), (' ♦', '   '), (' ♦', '   ')],
     ]
-    '''
 
-    
+    level = 0
 
     line_hash = '|-----'
 
@@ -35,3 +34,6 @@ def print_board(board: list, level: int):
         print('|')
 
         print(f'      {line_hash * globals.COLS}|')
+
+
+print_board([], 4)
