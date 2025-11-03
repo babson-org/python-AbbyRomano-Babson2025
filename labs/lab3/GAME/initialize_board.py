@@ -5,6 +5,8 @@ from globals import DEFAULT_SYMBOL
 def initialize_board(size):
     #create a board, displaying default diamond, for size x by size y given by user
     board = [[DEFAULT_SYMBOL for _ in range(size)] for _ in range(size)]
+    return board 
+
  
  
 
