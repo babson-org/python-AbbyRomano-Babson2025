@@ -1,35 +1,29 @@
 import globals
 
-def print_board(board: list, level: int):
+def print_board(board, level):
+    #set level to 0 to refer to hidden board 
+    level = 0 
 
-    board = [
-        [(' ♦', '💣'), (' ♦', '💣'), (' ♦', 1),
-         (' ♦', '   '), (' ♦', '   '), (' ♦', '   ')],
-        [(' ♦', 2), (' ♦', 2), (' ♦', 1),
-         (' ♦', '   '), (' ♦', '   '), (' ♦', '   ')],
-        [(' ♦', '   '), (' ♦', '   '), (' ♦', '   '),
-         (' ♦', '   '), (' ♦', '   '), (' ♦', '   ')],
-    ]
-
-    level = 0
-
-    line_hash = '|-----'
+    line_hash = '|-----' * globals.COLS + '|'
 
     print('      ', end='')
-    for idx in range(globals.COLS):
-        print(f'   {idx}  ', end='')
+    for col in range(globals.COLS):
+        print(f'   {col}  ', end='')
+    print()
 
-    print(f'\n      {line_hash * globals.COLS}|')
+    print('      ', + line_hash)
 
     for row in range(globals.ROWS):
-        print(f'  {row}   ', end='')
+        print(f' {row} ', end='')
+
         for col in range(globals.COLS):
-            symbol = board[row][col][level]
+            cell = board[row][col]
 
-            if symbol == '💣':
-                print(f'| {symbol:3}', end='')
+            if isinstance(cell, tuple):
+                symbol = cell[level]
             else:
-                print(f'| {symbol:3} ', end='')
+                symbol = cell if cell is not None else ' '
+            print(f'|{symbol}', end=' ')
         print('|')
-
-        print(f'      {line_hash * globals.COLS}|')
+        print('     ' + line_hash)
+    
