@@ -1,6 +1,5 @@
 def count_adjacent_mines(row, col, board):
-    global size 
-    
+    size = len(board) 
     count = 0
     for i in range(row - 1, row + 2): 
         for j in range(col - 1, col + 2):
@@ -9,7 +8,7 @@ def count_adjacent_mines(row, col, board):
         if 0 <= i < size and 0 <= j < size:
             if board[i][j] == '💣':
                 count += 1
-        return count
+    return count
 
 
 
