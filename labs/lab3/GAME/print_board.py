@@ -33,5 +33,3 @@ def print_board(board: list, level: int):
         print('|')
 
         print(f'      {line_hash * globals.COLS}|')
-
-print_board(print_board, 0)
