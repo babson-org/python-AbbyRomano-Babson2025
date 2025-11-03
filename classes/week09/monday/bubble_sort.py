@@ -1,7 +1,7 @@
 list = [3, 5, 6, 2, 8, 1, 4, 7]
 def bubble_sort(list):
     num_items = len(list)
-    #loops through for each item in list 
+    #loops through for each item in list (through entire index)
     for i in range(num_items):
         #for each item in the list, if the right is larger than left, swap otherwise do nothing 
         for j in range(0, num_items-i-1):

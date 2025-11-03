@@ -81,7 +81,7 @@ print("▶️  Launching Minesweeper from bytecode only…")
 # Import the game entrypoint; this will load the .pyc via our finder.
 # All its imports (globals, utils, etc.) are also handled by the finder.
 try:
-    import play_minesweep  # type: ignore
+    import labs.lab3.YOUR_CODE.play_minesweep as play_minesweep  # type: ignore
 except Exception as e:
     print("❌ Runtime error while loading compiled modules:\n", e)
     sys.exit(1)
