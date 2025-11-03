@@ -1,4 +1,4 @@
-import globals
+import globals as globals
 
 
 def print_board(board: list, level: int):
