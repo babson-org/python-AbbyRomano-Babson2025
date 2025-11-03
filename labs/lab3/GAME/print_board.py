@@ -1,6 +1,5 @@
 import globals
 
-
 def print_board(board: list, level: int):
 
     board = [
@@ -35,4 +34,4 @@ def print_board(board: list, level: int):
 
         print(f'      {line_hash * globals.COLS}|')
 
-
+print_board(print_board, 0)

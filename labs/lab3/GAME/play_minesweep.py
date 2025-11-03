@@ -2,8 +2,9 @@ import globals as globals
 from globals import EMPTY_SYMBOL
 from initialize_board import initialize_board
 from place_random_mines import place_random_mines
+from print_board import print_board
 from is_mine_at import is_mine_at
-from print_board import print_board 
+
 
 
 def play_minesweep():
