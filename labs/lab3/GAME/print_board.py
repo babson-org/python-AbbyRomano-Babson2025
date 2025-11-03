@@ -1,4 +1,4 @@
-import globals as globals
+import globals
 
 
 def print_board(board: list, level: int):
@@ -36,4 +36,3 @@ def print_board(board: list, level: int):
         print(f'      {line_hash * globals.COLS}|')
 
 
-print_board([], 4)
