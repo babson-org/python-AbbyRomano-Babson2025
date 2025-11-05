@@ -1,6 +1,5 @@
 import globals
 
-
 def print_board(board: list, level: int):
 
     board = [
@@ -18,22 +17,17 @@ def print_board(board: list, level: int):
 
     print('      ', end='')
     for idx in range(globals.COLS):
-        print(f'   {idx}  ', end='')
-
+        print(f'   {idx}  ', end='')                
     print(f'\n      {line_hash * globals.COLS}|')
 
     for row in range(globals.ROWS):
-        print(f'  {row}   ', end='')
+        print(f'  {row:<3}|', end='')
         for col in range(globals.COLS):
-            symbol = board[row][col][level]
-
-            if symbol == '💣':
-                print(f'| {symbol:3}', end='')
-            else:
-                print(f'| {symbol:3} ', end='')
+            print(f'| {board[row][col][level]} ', end='')
         print('|')
-
         print(f'      {line_hash * globals.COLS}|')
+    print()
+    return board, level
 
 
-print_board([], 4)
+    
