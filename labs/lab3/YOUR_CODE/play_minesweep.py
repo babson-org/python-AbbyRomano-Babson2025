@@ -14,11 +14,14 @@ def play_minesweep():
     globals.ROWS = size 
     globals.COLS = size
 
-    mine_board = [[EMPTY_SYMBOL for _ in range(size)] for _ in range(size)]
+    mine_board = [[(EMPTY_SYMBOL, EMPTY_SYMBOL) for _ in range(size)] for _ in range(size)]
     hidden_board = initialize_board(size)
+    
     mines = place_random_mines(mine_board)
     globals.MINES = len(mines)
 
     is_mine_at(hidden_board, mine_board, mines)
 
-play_minesweep()
+if __name__ == "__main__":
+    play_minesweep()
+

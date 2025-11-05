@@ -40,6 +40,7 @@ def is_mine_at(hidden_board, mine_board, mines):
             hidden_board[row][col] = (DEFAULT_SYMBOL, DEFAULT_SYMBOL)
 
         #print updated board after each turn
+        print("DEBUG hidden_board sample:", hidden_board[0][0])
         print_board(hidden_board, 0)
 
 #once mines found == total mines, prints message and the mine board 
