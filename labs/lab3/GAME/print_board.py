@@ -21,7 +21,7 @@ def print_board(board: list, level: int):
     print(f'\n      {line_hash * globals.COLS}|')
 
     for row in range(globals.ROWS):
-        print(f'  {row}   ', end='')
+        print(f'  {row:<3}|', end='')
         for col in range(globals.COLS):
             print(f'| {board[row][col][level]} ', end='')
         print('|')
