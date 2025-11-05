@@ -28,7 +28,7 @@ def is_mine_at(hidden_board, mine_board, mines):
         
         #If the row and column chosen are in list of mines, 
         if (row, col) in mines: 
-            print('You found the mine!')
+            print('You found a mine!')
             #update the board at that index to show the mine symbol from globals 
             hidden_board[row][col] = (MINE_SYMBOL, MINE_SYMBOL) 
             #add 1 to found mines, so loop from place_random_mines continues until found mines == total mines 

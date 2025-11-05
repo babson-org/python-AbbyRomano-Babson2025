@@ -1,5 +1,4 @@
 import globals 
-from print_board import print_board 
 from globals import EMPTY_SYMBOL
 from initialize_board import initialize_board
 from place_random_mines import place_random_mines

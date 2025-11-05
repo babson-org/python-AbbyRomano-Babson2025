@@ -1,4 +1,6 @@
-#count number of mines around a cell  
+#count number of mines around a cell 
+from globals import MINE_SYMBOL
+
 def count_adjacent_mines(row, col, board):
     size = len(board) 
     count = 0
@@ -8,7 +10,7 @@ def count_adjacent_mines(row, col, board):
             if (i, j) == (row, col):
                 continue
         if 0 <= i < size and 0 <= j < size:
-            if board[i][j] == '💣':
+            if board[i][j] == MINE_SYMBOL:
                 count += 1
     return count
 

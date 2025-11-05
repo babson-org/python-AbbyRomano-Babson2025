@@ -3,7 +3,7 @@ def get_valid_input(prompt, min_value = 1, max_value = None):
     while True:
         try:
             #When asking for input, ensure its an integer between 0 and a max value if given (e.g. the board indexes)
-            value = (int(input(prompt)))
+            value = int(input(prompt))
             if value < min_value: 
                 print('Please enter a number greater than 0')
             elif max_value and value > max_value:
