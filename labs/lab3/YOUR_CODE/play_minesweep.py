@@ -22,6 +22,5 @@ def play_minesweep():
 
     is_mine_at(hidden_board, mine_board, mines)
 
-if __name__ == "__main__":
-    play_minesweep()
+play_minesweep()
 
