@@ -9,9 +9,9 @@ def count_adjacent_mines(row, col, board):
         for j in range(col - 1, col + 2):
             if (i, j) == (row, col):
                 continue
-        if 0 <= i < size and 0 <= j < size:
-            if board[i][j] == MINE_SYMBOL:
-                count += 1
+            if 0 <= i < size and 0 <= j < size:
+                if board[i][j] == MINE_SYMBOL:
+                    count += 1
     return count
 
 
