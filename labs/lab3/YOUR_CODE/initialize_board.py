@@ -3,7 +3,7 @@ from globals import DEFAULT_SYMBOL
 
 #define function to create a board that the user will see. Keep mines hidden, only diamonds showing
 def initialize_board(size):
-    #create a board, displaying default diamond, for size x by size y given by user
+    #create a board, displaying default diamond, for size x by size y given by user (cell is storing a tuple here)
     board = [[(DEFAULT_SYMBOL, DEFAULT_SYMBOL) for _ in range(size)] for _ in range(size)]
     return board
 
