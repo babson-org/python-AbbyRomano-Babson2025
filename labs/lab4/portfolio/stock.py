@@ -1,6 +1,7 @@
 
 class Stock:
     def __init__(self, sym, name, shares = 0.0, cost = 0.0):
+        #Define attributes for each stock object to use in other portfolio files 
         self.sym = sym
         self.name = name
         self.shares = shares
