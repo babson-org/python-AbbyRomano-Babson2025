@@ -19,7 +19,26 @@ def portfolio_sell_stock(self, sym: str, shares: float, price: float):
     - Hint: the amount you reduce cost is NOT the same as the amount you increase cash
     """
     
+    pos = _find_position(self, sym)
+    if pos is None: 
+        print(f'No owned positions for {sym} found!')
+        return
     
+    owned = pos['shares']
+    if shares > owned: 
+        print(f'Cannot sell {shares}. You only own {owned}!')
+        return 
+    
+    last_close = _prices.get_last_close_map([sym])[sym]
+    proceeds = last_close * shares
+    sold = shares / owned 
 
-    return
-       
+    cost_reduction = pos['cost'] * sold 
+    pos['share'] -= shares
+    pos['cost'] -= cost_reduction
+
+    if pos['shares'] == 0:
+        self.positions.remove(pos)
+    
+    self.cash += proceeds 
+    return 

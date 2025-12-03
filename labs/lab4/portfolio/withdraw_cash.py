@@ -15,7 +15,7 @@ def portfolio_withdraw_cash(self, amount: float):
         
     else:
         self.cash -= amount
-        print(f"Your check for 4{amount:,.2f} is in the mail")
+        print(f"Your check for ${amount:,.2f} is in the mail")
         time.sleep(1)
 
     return None
